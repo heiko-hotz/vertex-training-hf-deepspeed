@@ -1,0 +1,22 @@
+# Training configuration
+num_train_epochs: 1
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: true
+learning_rate: 2.0e-5
+lr_scheduler_type: "cosine"
+optim: "adamw_bnb_8bit"
+bf16: true
+
+# Logging and evaluation
+logging_steps: 10
+save_strategy: "epoch"
+seed: 42
+log_level: "info"
+
+# Dataset configuration
+dataset_text_field: "text"
+max_seq_length: 2048
+packing: true 
